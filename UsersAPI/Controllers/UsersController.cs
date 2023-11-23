@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using UsersAPI.Attributes;
 using UsersAPI.DTOs;
 using UsersAPI.Services.Interface;
 
@@ -15,6 +16,7 @@ namespace UsersAPI.Controllers
         {
             _userService = userService;
         }
+        [ApiKey]
         [HttpGet("GetAllUsers")]
         public async Task<ActionResult<IEnumerable<UserDto>>> Get()
         {

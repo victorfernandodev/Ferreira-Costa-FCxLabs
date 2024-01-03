@@ -16,7 +16,6 @@ namespace UsersAPI.Controllers
         {
             _userService = userService;
         }
-        [ApiKey]
         [HttpGet("GetAllUsers")]
         public async Task<ActionResult<IEnumerable<UserDto>>> Get()
         {

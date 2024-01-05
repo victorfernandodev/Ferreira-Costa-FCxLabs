@@ -1,0 +1,55 @@
+﻿@model User
+
+<h2>Criar/Editar Usuário</h2>
+
+<form method="post" asp-action="SaveUser">
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Nome</span>
+        <input asp-for="Name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Login</span>
+        <input asp-for="Login" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+        <span asp-validation-for="Login" class="text-danger"></span>
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
+        <input asp-for="Login" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">E-mail</span>
+        <input asp-for="Email" type="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Telefone</span>
+        <input asp-for="PhoneNumber" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">CPF</span>
+        <input asp-for="Cpf" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+        <span asp-validation-for="Cpf" class="text-danger"></span>
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Data de Nascimento</span>
+        <input asp-for="DateOfBirth" type="date"class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Nome da mãe</span>
+        <input asp-for="MotherName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+        <span asp-validation-for="MotherName" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>

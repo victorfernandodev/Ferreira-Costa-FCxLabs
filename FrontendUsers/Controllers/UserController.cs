@@ -1,7 +1,9 @@
 ﻿using FrontendUsers.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Text;
 using UsersAPI.Services.Interface;
+using static System.Net.WebRequestMethods;
 
 namespace FrontendUsers.Controllers
 {
@@ -36,6 +38,26 @@ namespace FrontendUsers.Controllers
                 }
             }
             return View();
+        }
+
+        public async Task<IActionResult> CreateUser()
+        {
+            string endpointUrl = "https://localhost:44394/api/Users/GetAllUsers";
+            return View();
+        }
+
+        public async Task<IActionResult> SaveUser(User user)
+        {
+            var endpointUrl = "https://localhost:44394/api/Users/CreateUser";
+
+            using (HttpClient httpClient = new HttpClient())
+            {
+                var jsonContent = JsonConvert.SerializeObject(user);
+                StringContent content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = await httpClient.PostAsync(endpointUrl, content);
+                return View(response);
+            }
         }
     }
 }
